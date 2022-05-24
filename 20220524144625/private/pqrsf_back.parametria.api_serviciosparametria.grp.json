@@ -1,0 +1,36 @@
+{
+"ObjectType":"ServiceGroup",
+"Name":"PQRSF_Back\\Parametria\\API_ServiciosParametria",
+"BasePath":"ServiciosParametria",
+"Mappings":
+[
+{
+"Name":"traermunicipios",
+"Bodystyle":"Wrapped",
+"VariableAlias": [],
+"ServiceMethod":"gxep_traermunicipios",
+"Implementation":"PQRSF_Back\\Formulario\\Prc_TraerMunicipio",
+"Verb":"GET",
+"Path":"traermunicipios"
+
+},
+{
+"Name":"traeragencias",
+"Bodystyle":"Wrapped",
+"VariableAlias": [],
+"ServiceMethod":"gxep_traeragencias",
+"Implementation":"PQRSF_Back\\Formulario\\Prc_TraerAgencia",
+"Verb":"GET",
+"Path":"traeragencias"
+
+},
+{
+"Name":"traerasuntotipos",
+"Bodystyle":"Wrapped",
+"VariableAlias": [],
+"ServiceMethod":"gxep_traerasuntotipos",
+"Implementation":"PQRSF_Back\\Parametria\\DP_AsuntoTipo",
+"Verb":"GET",
+"Path":"traerasuntotipos"
+
+}]}

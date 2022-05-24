@@ -1,0 +1,113 @@
+openapi: 3.0.0
+info:
+  title: "PQRSF_Back"
+  version: "20220504150252"
+servers:
+  - url: http://localhost/PQRSF_Back/ServiciosParametria
+paths:
+  /TraerMunicipios:
+    get:
+      tags:
+        - PQRSF_Back.Parametria  
+      operationId: "PQRSF_Back.Parametria.API_ServiciosParametria.TraerMunicipios"
+      summary: "TraerMunicipios"
+      
+      responses:
+        200:
+          description: "Successful operation"
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/PQRSF_Back.Parametria.SDT_Municipio"  
+
+        404:
+          description: "Not found"
+
+  /TraerAgencias:
+    get:
+      tags:
+        - PQRSF_Back.Parametria  
+      operationId: "PQRSF_Back.Parametria.API_ServiciosParametria.TraerAgencias"
+      summary: "TraerAgencias"
+      
+      responses:
+        200:
+          description: "Successful operation"
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/PQRSF_Back.Parametria.SDT_Agencia"  
+
+        404:
+          description: "Not found"
+
+  /TraerAsuntoTipos:
+    get:
+      tags:
+        - PQRSF_Back.Parametria  
+      operationId: "PQRSF_Back.Parametria.API_ServiciosParametria.TraerAsuntoTipos"
+      summary: "TraerAsuntoTipos"
+      parameters:
+        - name: "Asuntotipo"
+          in: "query"
+          required: false
+          schema:
+            type: "string"
+            
+      
+      responses:
+        200:
+          description: "Successful operation"
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/PQRSF_Back.Parametria.SDT_AsuntoTipo"  
+
+        404:
+          description: "Not found"
+
+components:
+  schemas:
+  
+    PQRSF_Back.Parametria.SDT_Municipio:
+      properties:
+        MunicipioId:
+          description: Municipio Id
+          type: "string"
+        MunicipioDepartamento:
+          description: Municipio Departamento
+          type: "string"
+
+
+
+    PQRSF_Back.Parametria.SDT_Agencia:
+      properties:
+        AgenciaId:
+          description: Agencia Id
+          type: "integer"
+          format: "int32"
+        AgenciaNombre:
+          description: Agencia Nombre
+          type: "string"
+
+
+
+    PQRSF_Back.Parametria.SDT_AsuntoTipo:
+      properties:
+        AsuntoTipoID:
+          description: Asunto Tipo ID
+          type: "string"
+          format: "uuid"
+        AsuntoTipoNom:
+          description: Asunto Tipo Nom
+          type: "string"
+
+
+
+
